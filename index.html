@@ -31,25 +31,70 @@
           <img
             src="images/Pexels Photo by Karolina Grabowska.png"
             alt=""
-            class="money-master"
+            class="money"
           />
         </div>
         <div class="calculation">
-          <div class="">
+          <div class="all-inputes">
             <h2 class="income">Income</h2>
             <br />
-            <label for="fname" class="income-input">Income:</label>
-            <input type="text" id="fname" name="fname" /><br />
+            <div class="income-part">
+              <label for="fname" class="income-input">Income:</label>
+              <input class="box" type="text" id="incomes" name="fname" class />
+            </div>
+            <br />
             <h2 class="expances">Expances</h2>
             <br />
-            <label for="fname" class="income-input">Food:</label>
-            <input type="text" id="fname" name="fname" /><br />
-            <br />
-            <label for="fname" class="income-input">Rent:</label>
-            <input type="text" id="fname" name="fname" /><br />
-            <br />
-            <label for="fname" class="income-input">Cloths:</label>
-            <input type="text" id="fname" name="fname" /><br />
+            <div class="expances-part">
+              <label for="fname" class="income-input">Food:</label>
+              <input
+                class="box"
+                type="text"
+                id="food-cost"
+                name="fname"
+                class
+              /><br />
+              <br />
+              <label for="fname" class="income-input">Rent:</label>
+              <input
+                class="box"
+                type="text"
+                id="rent-cost"
+                name="fname"
+                class
+              /><br />
+              <br />
+              <label for="fname" class="income-input"
+                ><span class="cloths">Cloths</span>:</label
+              >
+              <input class="box" type="text" id="cloths-cost" name="fname" />
+              <br />
+              <button type="submit" class="calculate">
+                <span class="text">Calculate</span>
+              </button>
+            </div>
+          </div>
+          <div class="balance-expances">
+            <h3 class="total-expances">Total Expenses: 5500</h3>
+            <h3 class="total-balance">Balance: 4500</h3>
+          </div>
+          <div class="saving-money">
+            <label for="fname" class="income-input">Save:</label>
+            <input
+              class="save-money"
+              type="text"
+              id="save"
+              name="fname"
+              class
+            />
+            <span> % </span>
+            <button type="submit" class="save-button">
+              <span class="text">Save</span>
+            </button>
+          </div>
+          <div>
+            <h3 class="saved-amount">Saving Amount:00</h3>
+            <h3 class="remaining-balance">Remaining Balance: 4500</h3>
           </div>
         </div>
       </section>

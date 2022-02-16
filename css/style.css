@@ -7,7 +7,7 @@ body {
   margin-left: 600px;
   margin-top: 50px;
 }
-.money-master {
+.money {
   margin-top: 134px;
   margin-left: 65px;
   width: 705px;
@@ -20,6 +20,7 @@ body {
 .calculation {
   margin-top: 100px;
   margin-left: 100px;
+  background-color: #f8f8f8;
 }
 .income {
   line-height: 26px;
@@ -29,19 +30,74 @@ body {
   font-weight: 500;
   margin-left: 50px;
 }
-.income-input:hover {
-  border-radius: 3px solid blue;
-}
 .expances {
   line-height: 26px;
   margin-left: 200px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .cloths-input {
   font-weight: 500;
   margin-left: 50px;
 }
+.cloths {
+  margin-left: -13px;
+}
+.box {
+  width: 40%;
+  height: 25px;
+  border-radius: 7px;
+  background-color: #e5e4e2;
+}
+.all-inputes {
+  margin-left: 50px;
+}
+.income-part,
+.expances-part {
+  margin-left: 40px;
+}
+.calculate {
+  margin-top: 40px;
+  margin-left: 170px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #59a5ff;
+}
+.text {
+  font-size: 15px;
+  font-weight: 600;
+}
+.total-expances,
+.total-balance {
+  text-align: center;
+  margin-right: 50px;
+  margin-top: 30px;
+}
+.save-money {
+  margin-left: 10px;
+  width: 10%;
+  height: 25px;
+  border-radius: 7px;
+  background-color: #e5e4e2;
+}
+.saving-money {
+  margin-bottom: 25px;
+  margin-left: 120px;
+}
+.save-button {
+  margin-top: 40px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #59a5ff;
+}
+.saved-amount,
+.remaining-balance {
+  text-align: center;
+  margin-right: 50px;
+  margin-top: 1px;
+}
+
 /* @media only screen and (max-width: 688px) {
 }
 @media only screen and (min-width: 689) and (max-width: 988px) {
-} */
+} */ ;
