@@ -96,7 +96,7 @@ body {
   margin-right: 50px;
   margin-top: 1px;
 }
-
+/* Responsiveness For mobile Devices */
 @media only screen and (max-width: 688px) {
   .heading {
     margin-left: 18px;
@@ -116,5 +116,3 @@ body {
     margin-left: -600px;
   }
 }
-/* @media only screen and (min-width: 689) and (max-width: 988px) {
-}  */
