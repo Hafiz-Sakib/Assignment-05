@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500&family=Poppins:wght@400;500&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.heading {
+  margin-left: 600px;
+  margin-top: 50px;
+}
+.money-master {
+  margin-top: 134px;
+  margin-left: 65px;
+  width: 705px;
+  height: 815px;
+}
+.grid-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.calculation {
+  margin-top: 100px;
+  margin-left: 100px;
+}
+.income {
+  line-height: 26px;
+  margin-left: 200px;
+}
+.income-input {
+  font-weight: 500;
+  margin-left: 50px;
+}
+.income-input:hover {
+  border-radius: 3px solid blue;
+}
+.expances {
+  line-height: 26px;
+  margin-left: 200px;
+  margin-top: 50px;
+}
+.cloths-input {
+  font-weight: 500;
+  margin-left: 50px;
+}
+/* @media only screen and (max-width: 688px) {
+}
+@media only screen and (min-width: 689) and (max-width: 988px) {
+} */
