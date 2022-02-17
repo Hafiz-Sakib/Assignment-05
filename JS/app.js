@@ -6,7 +6,7 @@ function getAmount(id) {
   return inputAmount;
 }
 
-//function for error handling
+//function for  Calculate Button error handling
 function showErrormessage(amount1, amount2, amount3, amount4, totalExpense) {
   if (amount1 < 0 || amount2 < 0 || amount3 < 0 || amount4 < 0) {
     document.getElementById("alert-paragraph3").style.display = "block";
@@ -44,6 +44,32 @@ function showErrormessage(amount1, amount2, amount3, amount4, totalExpense) {
 
     document.getElementById("total-expenses").innerText =
       "❗can't expense money❗";
+  }
+}
+//function for handle saved button errors
+function saveButtonErrors(num1, num2, num3) {
+  if (num1 > num2) {
+    document.getElementById("alert-paragraph4").style.display = "block";
+    document.getElementById("alert-paragraph5").style.display = "none";
+
+    document.getElementById("saved-amount").innerText = "❗Error❗";
+
+    document.getElementById("remaining-balance").innerText = "❗can't save❗";
+  } else if (isNaN(num3) == true) {
+    document.getElementById("alert-paragraph5").style.display = "block";
+    document.getElementById("alert-paragraph4").style.display = "none";
+
+    document.getElementById("saved-amount").innerText = "❗Error❗";
+
+    document.getElementById("remaining-balance").innerText = "❗can't save❗";
+  } else if (num3 < 0) {
+    document.getElementById("alert-paragraph6").style.display = "block";
+    document.getElementById("alert-paragraph4").style.display = "none";
+    document.getElementById("alert-paragraph5").style.display = "none";
+
+    document.getElementById("saved-amount").innerText = "❗Error❗";
+
+    document.getElementById("remaining-balance").innerText = "❗can't save❗";
   }
 }
 
@@ -100,28 +126,6 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const newRemainingBalance = oldBalanceAmount - savedAmount;
   remainingBalance.innerText = newRemainingBalance;
 
-  //error handle for save Inputs
-  if (savedAmount > incomeAmount) {
-    document.getElementById("alert-paragraph4").style.display = "block";
-    document.getElementById("alert-paragraph5").style.display = "none";
-
-    document.getElementById("saved-amount").innerText = "❗Error❗";
-
-    document.getElementById("remaining-balance").innerText = "❗can't save❗";
-  } else if (isNaN(savedPercentage) == true) {
-    document.getElementById("alert-paragraph5").style.display = "block";
-    document.getElementById("alert-paragraph4").style.display = "none";
-
-    document.getElementById("saved-amount").innerText = "❗Error❗";
-
-    document.getElementById("remaining-balance").innerText = "❗can't save❗";
-  } else if (savedPercentage < 0) {
-    document.getElementById("alert-paragraph6").style.display = "block";
-    document.getElementById("alert-paragraph4").style.display = "none";
-    document.getElementById("alert-paragraph5").style.display = "none";
-
-    document.getElementById("saved-amount").innerText = "❗Error❗";
-
-    document.getElementById("remaining-balance").innerText = "❗can't save❗";
-  }
+  //calling saved button error Handling Function
+  saveButtonErrors(savedAmount, incomeAmount, savedPercentage);
 });
