@@ -103,6 +103,19 @@ body {
   margin-right: 50px;
   margin-top: 1px;
 }
+#alert-paragraph1 {
+  display: none;
+  margin-left: 35px;
+}
+#alert-paragraph2 {
+  display: none;
+  margin-left: 80px;
+}
+#alert-paragraph3 {
+  display: none;
+  margin-left: 120px;
+}
+
 /* Responsiveness For mobile Devices */
 @media only screen and (max-width: 688px) {
   .header {
