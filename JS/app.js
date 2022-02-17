@@ -48,6 +48,7 @@ function showErrormessage(amount1, amount2, amount3, amount4, totalExpense) {
 }
 //function for handle saved button errors
 function saveButtonErrors(num1, num2, num3) {
+  // const num3 = document.getElementById("save").input;
   if (num1 > num2) {
     document.getElementById("alert-paragraph4").style.display = "block";
     document.getElementById("alert-paragraph5").style.display = "none";
@@ -58,6 +59,7 @@ function saveButtonErrors(num1, num2, num3) {
   } else if (isNaN(num3) == true) {
     document.getElementById("alert-paragraph5").style.display = "block";
     document.getElementById("alert-paragraph4").style.display = "none";
+    document.getElementById("alert-paragraph6").style.display = "none";
 
     document.getElementById("saved-amount").innerText = "❗Error❗";
 
@@ -127,5 +129,6 @@ document.getElementById("save-btn").addEventListener("click", function () {
   remainingBalance.innerText = newRemainingBalance;
 
   //calling saved button error Handling Function
+
   saveButtonErrors(savedAmount, incomeAmount, savedPercentage);
 });
