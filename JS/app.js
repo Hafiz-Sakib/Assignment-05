@@ -1,17 +1,20 @@
-function calculateCosts(incomeId, foodId, rentId, clothId) {
-  //get  income value
-  const income = document.getElementById(incomeId);
-  const incomeText = income.value;
-  const incomeAmount = parseFloat(incomeText);
+// common function for string to number
+function getAmount(id) {
+  const getId = document.getElementById(id);
+  const inputText = getId.value;
+  const inputAmount = parseFloat(inputText);
+  return inputAmount;
+}
 
-  //get input values of expances
-  const foodCost = document.getElementById(foodId);
-  const rentCost = document.getElementById(rentId);
-  const clothsCost = document.getElementById(clothId);
-  const foodCostAmount = parseFloat(foodCost.value);
-  const rentCostAmount = parseFloat(rentCost.value);
-  const clothsCostAmount = parseFloat(clothsCost.value);
+function calculateCosts(incomeId, foodId, rentId, clothId) {
+  //calling  common function for string to number
+  const incomeAmount = getAmount("income");
+  const foodCostAmount = getAmount("food-cost");
+  const rentCostAmount = getAmount("rent-cost");
+  const clothsCostAmount = getAmount("cloths-cost");
+
   const totalExpenseAmount = foodCostAmount + rentCostAmount + clothsCostAmount;
+
   //calculate total expenses
   const totalExpense = document.getElementById("total-expenses");
   totalExpense.innerText = totalExpenseAmount;
