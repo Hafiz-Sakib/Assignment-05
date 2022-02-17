@@ -38,7 +38,7 @@
             <br />
             <div class="income-part">
               <label for="fname" class="income-input">Income:</label>
-              <input class="box" type="text" id="incomes" name="fname" class />
+              <input class="box" type="text" id="income" name="fname" class />
             </div>
             <br />
             <h2 class="expances">Expances</h2>
@@ -67,14 +67,16 @@
               >
               <input class="box" type="text" id="cloths-cost" name="fname" />
               <br />
-              <button type="submit" class="calculate">
+              <button type="submit" class="calculate" id="calculate-btn">
                 <span class="text">Calculate</span>
               </button>
             </div>
           </div>
           <div class="balance-expances">
-            <h3 class="total-expances">Total Expenses: 0</h3>
-            <h3 class="total-balance">Balance: 0</h3>
+            <h3 class="total-expances">
+              Total Expenses: <span id="total-expenses">0</span>
+            </h3>
+            <h3 class="total-balance">Balance: <span id="balance">0</span></h3>
           </div>
           <div class="saving-money">
             <label for="fname" class="income-input">Save:</label>
