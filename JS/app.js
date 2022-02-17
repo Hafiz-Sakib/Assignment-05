@@ -6,6 +6,49 @@ function getAmount(id) {
   return inputAmount;
 }
 
+//function for error handling
+function showErrormessage(amount1, amount2, amount3, amount4, totalExpense) {
+  if (amount1 < 0 || amount2 < 0 || amount3 < 0 || amount4 < 0) {
+    document.getElementById("alert-paragraph3").style.display = "block";
+    document.getElementById("alert-paragraph2").style.display = "none";
+    document.getElementById("alert-paragraph1").style.display = "none";
+
+    document.getElementById("balance").innerText = "❗Error❗";
+
+    document.getElementById("total-expenses").innerText =
+      "❗can't expense money❗";
+  } else if (amount1 < totalExpense) {
+    document.getElementById("alert-paragraph1").style.display = "block";
+
+    document.getElementById("alert-paragraph2").style.display = "none";
+
+    document.getElementById("alert-paragraph3").style.display = "none";
+
+    document.getElementById("balance").innerText = "❗Error❗";
+
+    document.getElementById("total-expenses").innerText =
+      "❗can't expense money❗";
+  } else if (
+    isNaN(amount1) == true ||
+    isNaN(amount2) == true ||
+    isNaN(amount3) == true ||
+    isNaN(amount4) == true
+  ) {
+    document.getElementById("alert-paragraph2").style.display = "block";
+
+    document.getElementById("alert-paragraph1").style.display = "none";
+
+    document.getElementById("alert-paragraph3").style.display = "none";
+
+    document.getElementById("balance").innerText = "❗Error❗";
+
+    document.getElementById("total-expenses").innerText =
+      "❗can't expense money❗";
+  }
+}
+
+//common function for calculating Costs
+
 function calculateCosts(incomeId, foodId, rentId, clothId) {
   //calling  common function for string to number
   const incomeAmount = getAmount("income");
@@ -22,48 +65,14 @@ function calculateCosts(incomeId, foodId, rentId, clothId) {
   const balance = document.getElementById("balance");
   balance.innerText = incomeAmount - totalExpenseAmount;
 
-  if (
-    incomeAmount < 0 ||
-    foodCostAmount < 0 ||
-    rentCostAmount < 0 ||
-    clothsCostAmount < 0
-  ) {
-    document.getElementById("alert-paragraph3").style.display = "block";
-    document.getElementById("alert-paragraph2").style.display = "none";
-    document.getElementById("alert-paragraph1").style.display = "none";
-
-    document.getElementById("balance").innerText = "❗Error❗";
-
-    document.getElementById("total-expenses").innerText =
-      "❗can't expense money❗";
-  } else if (totalExpenseAmount > incomeAmount) {
-    document.getElementById("alert-paragraph1").style.display = "block";
-
-    document.getElementById("alert-paragraph2").style.display = "none";
-
-    document.getElementById("alert-paragraph3").style.display = "none";
-
-    document.getElementById("balance").innerText = "❗Error❗";
-
-    document.getElementById("total-expenses").innerText =
-      "❗can't expense money❗";
-  } else if (
-    isNaN(incomeAmount) == true ||
-    isNaN(foodCostAmount) == true ||
-    isNaN(rentCostAmount) == true ||
-    isNaN(clothsCostAmount) == true
-  ) {
-    document.getElementById("alert-paragraph2").style.display = "block";
-
-    document.getElementById("alert-paragraph1").style.display = "none";
-
-    document.getElementById("alert-paragraph3").style.display = "none";
-
-    document.getElementById("balance").innerText = "❗Error❗";
-
-    document.getElementById("total-expenses").innerText =
-      "❗can't expense money❗";
-  }
+  // calling error handle function
+  showErrormessage(
+    incomeAmount,
+    foodCostAmount,
+    rentCostAmount,
+    clothsCostAmount,
+    totalExpenseAmount
+  );
 }
 
 // add event handler for calculate button
