@@ -50,7 +50,7 @@ body {
 }
 .box {
   width: 40%;
-  height: 25px;
+  height: 30px;
   border-radius: 7px;
   background-color: #e5e4e2;
 }
@@ -115,6 +115,18 @@ body {
   display: none;
   margin-left: 120px;
 }
+#alert-paragraph4 {
+  display: none;
+  margin-left: 10px;
+}
+#alert-paragraph5 {
+  display: none;
+  margin-left: 20px;
+}
+#alert-paragraph6 {
+  display: none;
+  margin-left: 0px;
+}
 
 /* Responsiveness For mobile Devices */
 @media only screen and (max-width: 688px) {
@@ -134,5 +146,8 @@ body {
   .calculation {
     margin-top: 900px;
     margin-left: -620px;
+  }
+  .total-expances {
+    margin-left: 125px;
   }
 }

@@ -80,3 +80,48 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   //calling function for calculate expenses and  balance
   calculateCosts("income", "food-cost", "rent-cost", "cloths-cost");
 });
+
+//handle save event Listener
+document.getElementById("save-btn").addEventListener("click", function () {
+  // get saving Amount
+  const incomeAmount = getAmount("income");
+  const savedPercentage = getAmount("save");
+  const savedAmount = (incomeAmount * savedPercentage) / 100;
+  const totalSavingAmount = document.getElementById("saved-amount");
+  totalSavingAmount.innerText = savedAmount;
+
+  //get Remaining Balance
+  const remainingBalance = document.getElementById("remaining-balance");
+  const remainingBalanceText = remainingBalance.innerText;
+  const remainingBalanceAmount = parseFloat(remainingBalanceText);
+
+  const oldBalance = document.getElementById("balance").innerText;
+  const oldBalanceAmount = parseFloat(oldBalance);
+  const newRemainingBalance = oldBalanceAmount - savedAmount;
+  remainingBalance.innerText = newRemainingBalance;
+
+  //error handle for save Inputs
+  if (savedAmount > incomeAmount) {
+    document.getElementById("alert-paragraph4").style.display = "block";
+    document.getElementById("alert-paragraph5").style.display = "none";
+
+    document.getElementById("saved-amount").innerText = "❗Error❗";
+
+    document.getElementById("remaining-balance").innerText = "❗can't save❗";
+  } else if (isNaN(savedPercentage) == true) {
+    document.getElementById("alert-paragraph5").style.display = "block";
+    document.getElementById("alert-paragraph4").style.display = "none";
+
+    document.getElementById("saved-amount").innerText = "❗Error❗";
+
+    document.getElementById("remaining-balance").innerText = "❗can't save❗";
+  } else if (savedPercentage < 0) {
+    document.getElementById("alert-paragraph6").style.display = "block";
+    document.getElementById("alert-paragraph4").style.display = "none";
+    document.getElementById("alert-paragraph5").style.display = "none";
+
+    document.getElementById("saved-amount").innerText = "❗Error❗";
+
+    document.getElementById("remaining-balance").innerText = "❗can't save❗";
+  }
+});
